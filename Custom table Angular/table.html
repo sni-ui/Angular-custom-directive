@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <style>
+    table, th , td {
+      border: 1px solid grey;
+      padding: 7px;
+      border-collapse: collapse;
+      
+    }
+    
+ </style>
+</head>
+    
+<body>
+
+     <div ng-app = "myApp" ng-controller = "myCtrl" ng-init="">
+         
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+          <tr ng-repeat="student in Students | orderBy: 'name'">
+            <td>{{ student.firstname | uppercase}}</td>
+            <td>{{ student.lastname| uppercase}}</td>
+          </tr>
+        </table>
+        
+      </div>
+      
+      <script>
+         var mainApp = angular.module("myApp", []);
+         
+         mainApp.controller('myCtrl', function($scope) {
+            $scope.Students = [
+                              {firstname:'Snigdha',lastname:'cgtxdk'},
+                              {firstname:'Saavi',lastname:'dshth'},
+                              {firstname:'ghasc',lastname:'tdwj'},
+                              {firstname:'baxvkg',lastname:'chgx'},
+                              {firstname:'vxskbc',lastname:'bvwyivf'}
+                             ]
+             
+         });
+      </script>  
+
+</body>
+</html>
